@@ -8,6 +8,10 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+// Librerias para conectar con Mysql
+using Microsoft.EntityFrameworkCore;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
+using Lcore.Data;
 
 namespace Lcore
 {
@@ -24,6 +28,15 @@ namespace Lcore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+             // other service configurations go here
+            // replace "YourDbContext" with the class name of your DbContext
+            services.AddDbContextPool<LCoreContext>(options => options
+                // replace with your connection string
+                .UseMySql(Configuration.GetConnectionString("LCoreConnection"), mySqlOptions => mySqlOptions
+                    // replace with your Server Version and Type
+                    .ServerVersion(new Version(10, 3, 14), ServerType.MySql)
+            ));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
