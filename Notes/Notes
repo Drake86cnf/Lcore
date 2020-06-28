@@ -1,0 +1,9 @@
+    Para Generar un modelo a partir de una tabla en la base de datos:
+        dotnet ef dbcontext scaffold "Server=localhost;User=root;Password=[PassDb];Database=proyecto;TreatTinyAsBoolean=true;" Pomelo.EntityFrameworkCore.MySql -o Models
+
+dotnet ef dbcontext scaffold "Server=localhost;User=root;Password=Te13visor;Database=proyecto;TreatTinyAsBoolean=true;" Pomelo.EntityFrameworkCore.MySql controller -name ContactosController -api -m Lcore.Models.Contacto -outDir Controllers -namespace Lcore.Controllers
+
+dotnet-aspnet-codegenerator -p "C:\Users\Drake\Documents\Proyectos\Lcore\Lcore.csproj" controller -name ContactosController -api -m Lcore.Models.Contacto -dc LCoreContext -outDir Controllers -namespace Lcore.Controllers
+
+    Para Crear el CRUD (Controlador+Vistas) de un Modelo:
+        dotnet aspnet-codegenerator  controller -name [Modelo]Controller  -dc LCoreContext -outDir Controllers -actions -m [Modelo] -f
