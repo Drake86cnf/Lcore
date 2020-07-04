@@ -1,17 +1,25 @@
-@model Lcore.Models.Contacto
+@model LCore.Models.Contacto
 
 @{
-    Layout = null;
+    Layout = "_BaseLCore";
 }
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Details</title>
-</head>
-<body>
+@section ContentHeader{
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Gestíon de Contactos</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Contactos</a></li>
+                        <li class="breadcrumb-item active">@Html.DisplayFor(model => model.GetNombreCompleto)</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+}
 
 <div>
     <h4>Contacto</h4>
@@ -95,5 +103,4 @@
     <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
-</body>
-</html>
+

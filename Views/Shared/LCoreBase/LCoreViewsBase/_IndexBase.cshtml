@@ -1,0 +1,66 @@
+
+@{
+    Layout = "LCoreBase/LCoreLayoutBase/_BaseLCore";
+    ViewData["Title"] = @ViewData["Title"];
+}
+
+@section stylesheet{
+      <link rel="stylesheet" href="~/lib/datatable/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="~/lib/datatable/datatables-responsive/css/responsive.bootstrap4.min.css">
+}
+@section Scripts{
+    <!-- DataTables -->
+<script src="~/lib/datatable/datatables/jquery.dataTables.min.js"></script>
+<script src="~/lib/datatable/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="~/lib/datatable/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="~/lib/datatable/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script>
+  $(function () {
+    $("#Table1").DataTable({
+      "responsive": true,
+      "autoWidth": false,
+      "order": [[ 0, "asc" ]],
+      "language": {
+        "url": "../../lib/datatable/Spanish.json"
+    },
+    "columns": [
+    { "orderable": true },
+    { "orderable": true },
+    { "orderable": true },
+    { "orderable": true },
+    { "orderable": true },
+    { "orderable": true },
+    { "orderable": true },
+    { "orderable": false }
+  ]
+    });
+  });
+</script>
+}
+
+@section ContentHeader{
+    @RenderSection("ContentHeader", required: false)
+}
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                @RenderSection("Actions", required: false)                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        @RenderSection("IndexContent",required:false)
+                    </div> <!-- /.card-body -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
