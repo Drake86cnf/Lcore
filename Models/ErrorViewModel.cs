@@ -1,6 +1,6 @@
 using System;
 
-namespace Lcore.Models
+namespace LCore.Models
 {
     public class ErrorViewModel
     {

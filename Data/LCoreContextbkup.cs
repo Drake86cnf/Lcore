@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 
 
-namespace Lcore.Data
+namespace LCore.Data
 {
     public class LCoreContextbkup : DbContext
     {

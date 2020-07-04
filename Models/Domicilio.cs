@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Lcore.Models
+namespace LCore.Models
 {
     public partial class Domicilio
     {

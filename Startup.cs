@@ -11,9 +11,9 @@ using Microsoft.Extensions.Hosting;
 // Librerias para conectar con Mysql
 using Microsoft.EntityFrameworkCore;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
-using Lcore.Data;
+using LCore.Data;
 
-namespace Lcore
+namespace LCore
 {
     public class Startup
     {

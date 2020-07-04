@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Lcore.Data;
-using Lcore.Models;
+using LCore.Data;
+using LCore.Models;
 
-namespace Lcore.Controllers
+namespace LCore.Controllers
 {
     public class ContactoController : Controller
     {

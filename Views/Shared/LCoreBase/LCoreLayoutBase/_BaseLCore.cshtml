@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>@ViewData["Title"] - Lcore</title>
+  <title>@ViewData["Title"] - LCore</title>
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="~/lib/fontawesome-free/css/all.min.css">
@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="~/lib/adminlte/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  @RenderSection("stylesheet", required: false)
 </head>
 <!--
 BODY TAG OPTIONS:
@@ -31,26 +32,26 @@ to get the desired effect
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- NavbarLeft -->
-    <partial name="_NavBarLeft"/>
+    <partial name="LCoreBase/LCoreLayoutBase/_NavBarLeft"/>
     <!-- NavbarRight -->
-    <partial name="_NavBarRight"/>
+    <partial name="LCoreBase/LCoreLayoutBase/_NavBarRight"/>
   </nav>
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <partial name="_BrandLogo"/>
+    <partial name="LCoreBase/LCoreLayoutBase/_BrandLogo"/>
 
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
-      <partial name="_UserInformation"/>
+      <partial name="LCoreBase/LCoreLayoutBase/_UserInformation"/>
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-        <partial name="_SideMenu"/>
+        <partial name="LCoreBase/LCoreLayoutBase/_SideMenu"/>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -61,7 +62,8 @@ to get the desired effect
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <div class="content-header">
+    @RenderSection("ContentHeader", required: false)
+    @* <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
@@ -75,7 +77,7 @@ to get the desired effect
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
-    </div>
+    </div> *@
     <!-- /.content-header -->
 
     <main role="main" class="pb-3">

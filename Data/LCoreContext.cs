@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Configuration;
-using Lcore.Models;
+using LCore.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 
 
-namespace Lcore.Data
+namespace LCore.Data
 {
     public partial class LCoreContext : DbContext
     {
